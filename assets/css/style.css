@@ -24,9 +24,22 @@ body {
 	color: #ffffff;
 }
 
-#start-button{
-	margin:20% 0% 0% 35%;
-	color: #ffffff;
-	font-weight: bold;
-	font-size: 25px;
+
+.overlay {
+  background-color: #241913;
+  opacity: 0.85;
+  margin-top: 5%;
+}
+
+p{
+color:#ffffff;
+
+}
+
+h3{
+    color:#ffffff;
+}
+
+h1{
+    color:#ffffff;
 }
