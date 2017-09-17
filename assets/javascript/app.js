@@ -20,7 +20,6 @@ var questions = [{
     correctAnswer: "Naruto"
 }];
 
-var images = ["picture1", "picture2", "picture3", "picture4", "picture5", ]
 
 numberRight = 0;
 numberWrong = 0;
@@ -32,7 +31,7 @@ for (var i = 0; i < questions.length; i++) {
     var pTag = $("<p>");
     var form = $("<form class='question'>");
 
-    //set our question
+    
     pTag.html(questions[i].question);
     
     for(var j = 0; j < questions[i].choices.length; j++){
@@ -41,7 +40,7 @@ for (var i = 0; i < questions.length; i++) {
 
         var choice = $("<input type='radio' name='optradio'>");
 
-        //set attributes for choice
+    
         choice.attr("value", questions[i].choices[j]);
         label.append(choice);
         label.append(questions[i].choices[j]);
@@ -52,10 +51,10 @@ for (var i = 0; i < questions.length; i++) {
     $('#questionDiv').append(pTag);
 
 
-} // end for
+} 
 
 
-//Countdown Timer
+
 var n = 75;
 setTimeout(countDown,1000);
 
@@ -72,30 +71,29 @@ function countDown(){
    }
 
 
-} //end countdown
+} 
 
 
-//Function to grade the results
+
 function grader(){
 
 
-    //Finds questions.
+    
     var selected = $('.question');
     $.each(selected, function(){
         var checkBox = $(this).find("input[type=radio]:checked");
 
         if (!checkBox.val()){
-            console.log("unanswered");
+;
             userAnswers.push("unanswered");
         }
-        if (checkBox.val()) {
-            console.log(checkBox.val());
+        if (checkBox.val()) {            
             userAnswers.push(checkBox.val());
         }
-        console.log(userAnswers);
-    }) //end of each selected function
 
-    //grades the questions
+    })
+
+    
     for (var i = 0; i < questions.length; i++) {
         if (userAnswers[i]=="unanswered") {
             numberUnanswered++;
@@ -112,9 +110,8 @@ function grader(){
         $("#correct").html(numberRight);
         $("#wrong").html(numberWrong);
         $("#unanswered").html(numberUnanswered);
-        console.log(numberUnanswered);
-        console.log(numberRight);
-        console.log(numberWrong);
-    }//end for
+    }
 
-} // end grader function
+} 
+
+
